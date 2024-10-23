@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Openwrt on 知识库</title>
+        <link>http://localhost:1313/bk/categories/openwrt/</link>
+        <description>Recent content in Openwrt on 知识库</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>知识库</copyright>
+        <lastBuildDate>Wed, 23 Oct 2024 00:15:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/bk/categories/openwrt/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>无需硬件！手把手教你在VMware上安装软路由，实现校园网多设备共享上网!</title>
+        <link>http://localhost:1313/bk/p/%E6%97%A0%E9%9C%80%E7%A1%AC%E4%BB%B6%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%9C%A8vmware%E4%B8%8A%E5%AE%89%E8%A3%85%E8%BD%AF%E8%B7%AF%E7%94%B1%E5%AE%9E%E7%8E%B0%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%85%B1%E4%BA%AB%E4%B8%8A%E7%BD%91/</link>
+        <pubDate>Wed, 23 Oct 2024 00:15:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/bk/p/%E6%97%A0%E9%9C%80%E7%A1%AC%E4%BB%B6%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%9C%A8vmware%E4%B8%8A%E5%AE%89%E8%A3%85%E8%BD%AF%E8%B7%AF%E7%94%B1%E5%AE%9E%E7%8E%B0%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%85%B1%E4%BA%AB%E4%B8%8A%E7%BD%91/</guid>
+        <description>&lt;img src="http://localhost:1313/bk/assets1/2.jpg" alt="Featured image of post 无需硬件！手把手教你在VMware上安装软路由，实现校园网多设备共享上网!" /&gt;&lt;h1 id=&#34;无需硬件手把手教你在vmware上安装软路由实现校园网多设备共享上网&#34;&gt;无需硬件！手把手教你在VMware上安装软路由，实现校园网多设备共享上网！
+&lt;/h1&gt;&lt;h2 id=&#34;1-搭建本地编译环境&#34;&gt;1. 搭建本地编译环境
+&lt;/h2&gt;&lt;h3 id=&#34;11-下载ubuntu镜像推荐ubuntu200405-ltsx64&#34;&gt;1.1 下载Ubuntu镜像，推荐Ubuntu20.04.05 LTSx64
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://cn.ubuntu.com/download/desktop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/PixPin_2024-10-10_19-30-18-20241010193046-to8awc5.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;PixPin_2024-10-10_19-30-18&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/0.2-20241010193402-rfyuf3m.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;0.2&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/PixPin_2024-10-21_23-53-20-20241021235456-1r2ewxh.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;PixPin_2024-10-21_23-53-20&#34;
+	
+	
+&gt;​​​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/0.4-20241010194325-z44bkc6.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;0.4&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;h3 id=&#34;12-安装ubuntu虚拟机&#34;&gt;1.2 安装ubuntu虚拟机
+&lt;/h3&gt;&lt;p&gt;以VMware Workstation 16 Pro 16.2.4版本为例，新建虚拟机，选择自定义选项&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/1-20241007232058-nu76hov.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/2-20241007232116-wxeg73q.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/4-20241007232254-m9rdg1f.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;4&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/0.5-20241010195211-vlo8ell.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;0.5&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/0.6-20241010195436-el259vn.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;0.6&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/0.7-20241010195548-nppybsi.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;0.7&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/0.8-20241010195600-3un5xa8.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;0.8&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/0.9-20241010195706-gz5oxjm.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;0.9&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/10-20241007232514-g3l2ha9.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;10&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/11-20241007232520-q8n57rc.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;11&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/1.00-20241010195858-gqq00ij.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1.00&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PS：如果你要安装很多插件建议最低保持100G&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/1.01-20241010200203-pd0tfyw.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1.01&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/1.02-20241010200336-x5ycszb.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1.02&#34;
+	
+	
+&gt;​&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/1.03-20241010200339-zbhezl4.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1.03&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;添加Ubuntu系统镜像&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/1.04-20241010201059-gl642s0.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1.04&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/1.05-20241010201534-li14p3b.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1.05&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/1.06-20241010202755-qlchyae.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1.06&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/1.07-20241010202805-1jfnqwe.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1.07&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/1.08-20241010202815-afr7nie.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1.08&#34;
+	
+	
+&gt;​&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/1.09-20241010204507-vva9wwj.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1.09&#34;
+	
+	
+&gt;​​​&lt;/p&gt;
+&lt;p&gt;安装完成之后，打开软件与更新，将下载自（位于中国的服务器）修改为阿里云的地址&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/1.1-20241010210032-c17q9kr.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1.1&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;安装完测试一下宿主机能不能和ubuntu虚拟机进行直通，后面会需要复制粘贴命令行到终端，如果能复制粘贴命令行到ubuntu虚拟机中，则跳过安装vmware tools（以下三行）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt upgrade
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install open-vm-tools-desktop -y
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo reboot
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;13-配置编译环境&#34;&gt;1.3 配置编译环境
+&lt;/h3&gt;&lt;p&gt;按Ctrl+Alt+T快捷键在终端输入以下命令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt upgrade -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;执行完毕输入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev patch python3 python2.7 unzip zlib1g-dev lib32gcc-s1 libc6-dev-i386 subversion flex uglifyjs gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx-ucl libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf wget curl swig rsync
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;从这一步开始开启网络代理，否则有的文件会无法下载&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;下载lede大佬的源码，注意下载路径不能有中文&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/coolsnowwolf/lede
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;无法下载的话设置一下git代理&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git config --global --unset http.proxy 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git config --global --unset https.proxy
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;进入lede目录&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cd lede
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;拉取校园网防检测所需要的模块&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/EOYOHOO/UA2F
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/EOYOHOO/rkp-ipid.git package/rkp-ipid
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;然后进入lede源码的根目录中添加下面代码到feeds.conf.default 文件&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;src-git kenzo https://github.com/kenzok8/openwrt-packages
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;src-git small https://github.com/kenzok8/small
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;更新 feed 模块，终端输入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./scripts/feeds update -a
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./scripts/feeds install -a
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;2-本地编译config&#34;&gt;2. 本地编译.config
+&lt;/h2&gt;&lt;p&gt;打开编译菜单，在终端输入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;make menuconfig
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;前三项选择以下选项(VMware是x86架构，所以咱们选x86的)&lt;/p&gt;
+&lt;p&gt;‍&lt;/p&gt;
+&lt;p&gt;以下为校园网防检测必选&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 勾选上 ipid
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# kernel-modules-&amp;gt;Other modules-&amp;gt;kmod-rkp-ipid
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 选上模块
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# kernel modules-&amp;gt;Netfilter Extensions-&amp;gt;kmod-ipt-ipopt
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# kernel modules-&amp;gt;Netfilter Extensions-&amp;gt;kmod-ipt-u32
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 勾选上 ua2f
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# network-&amp;gt;Routing and Redirection-&amp;gt;ua2f
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 选上模块
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# network-&amp;gt;firewall-&amp;gt;iptables-mod-conntrack-extra
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# network-&amp;gt;firewall-&amp;gt;iptables-mod-filter
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# network-&amp;gt;firewall-&amp;gt;iptables-mod-ipopt
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# network-&amp;gt;firewall-&amp;gt;iptables-mod-u32
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;根据自己喜好选择插件，然后保存退出&lt;/p&gt;
+&lt;p&gt;插件参考链接：&lt;a class=&#34;link&#34; href=&#34;%20https://www.right.com.cn/forum/thread-344825-1-1.html&#34; &gt;Applications 添加插件应用说明-L大&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;‍&lt;/p&gt;
+&lt;h2 id=&#34;3-本地编译openwrt固件&#34;&gt;3. 本地编译openwrt固件
+&lt;/h2&gt;&lt;p&gt;下载 dl 库，在终端输入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;make download -j8 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;开始编译固件，在终端输入 （-j 后面是线程数，第一次编译推荐用单线程）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;make V=s -j1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;编译完成后镜像包输出路径：bin/targets&lt;/p&gt;
+&lt;p&gt;然后这里会有两个镜像文件分别是：openwrt-x86-64-generic-squashfs-rootfs.img.gz和openwrt-x86-64-generic-squashfs-combined.img.gz，&lt;/p&gt;
+&lt;p&gt;选择导出：openwrt-x86-64-generic-squashfs-combined.img.gz&lt;/p&gt;
+&lt;h2 id=&#34;4-在线编译openwrt固件&#34;&gt;4. 在线编译openwrt固件
+&lt;/h2&gt;&lt;h3 id=&#34;使用github-actions功能编译固件&#34;&gt;使用github Actions功能编译固件
+&lt;/h3&gt;&lt;p&gt;此方法需要有github账号，将P3TERX项目拉到自己账号仓库&lt;/p&gt;
+&lt;p&gt;PS：GitHub Actions是有限制的，安装很多插件可能会导致编译失败，不过安装文章里的插件是可以编译成功的，详情请看：&lt;a class=&#34;link&#34; href=&#34;https://docs.github.com/zh/actions/administering-github-actions/usage-limits-billing-and-administration&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub Actions 官方文档-使用限制、计费和管理&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/77.1-20241012153336-ngzkq7d.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;77.1&#34;
+	
+	
+&gt;​&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/77.2-20241012153352-cxjf9cq.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;77.2&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;然后编辑拉取到自己仓库下diy2脚本，添加ua2f和rkp-ipid模块&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/77.3-20241012153826-sz0udcb.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;77.3&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/EOYOHOO/UA2F.git package/UA2F
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/EOYOHOO/rkp-ipid.git package/rkp-ipid
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;在虚拟机进入lede目录，将feeds.conf.default文件和 .config文件导出虚拟机&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/77.4-20241012154624-6fdo47g.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;77.4&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;以记事本打开.config文件按Ctrl+F查找Netfilter Extensions关键词，在Netfilter Extensions下第二行后添加代码，保存&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/77.5-20241012154638-9tjt7y7.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;77.5&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CONFIG_NETFILTER_NETLINK_GLUE_CT=y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;上传feeds.conf.default文件和 .config文件&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/77.7-20241012154939-m6scuge.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;77.7&#34;
+	
+	
+&gt;​&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/77.9-20241012154956-5o3yg5s.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;77.9&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;查看一下是否上传完毕&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/78.1-20241012155012-x90asab.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;78.1&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;开始编译&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/78.3-20241012155254-gx7istr.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;78.3&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;当出现这个界面时，Actions已经开始编译，编译时间4-6小时（插件越多编译时间越长）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/78.4-20241012155349-a5k3fsl.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;78.4&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;如果第一次编译失败，进入虚拟机进行二次编译&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cd lede
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rm -rf ./tmp &lt;span class=&#34;err&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; rm -rf .config
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git pull
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./scripts/feeds update -a &lt;span class=&#34;err&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ./scripts/feeds install -a
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;make menuconfig
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;‍&lt;/p&gt;
+&lt;h2 id=&#34;5-刷入openwrt系统&#34;&gt;5. 刷入openwrt系统
+&lt;/h2&gt;&lt;h3 id=&#34;51-镜像转换&#34;&gt;5.1 镜像转换
+&lt;/h3&gt;&lt;p&gt;将编译好的固件包导出来，使用 StarWind V2V Converter 将img镜像文件转换为vmdk格式&lt;/p&gt;
+&lt;p&gt;StarWind V2V Converter下载地址：&lt;a class=&#34;link&#34; href=&#34;https://www.starwindsoftware.com/tmplink/starwindconverter.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.starwindsoftware.com/tmplink/starwindconverter.exe&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/111-20241010231750-7a5xs4d.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;111&#34;
+	
+	
+&gt;​&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/3333-20241010231815-0re2xyl.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;3333&#34;
+	
+	
+&gt;​&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/444-20241010231819-vvncgtw.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;444&#34;
+	
+	
+&gt;​&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/555-20241010231829-fz5bjr0.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;555&#34;
+	
+	
+&gt;​&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/666-20241010231857-rzm9i2h.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;666&#34;
+	
+	
+&gt;​&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/777-20241010231902-q621ikr.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;777&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;h3 id=&#34;52-创建虚拟机并导入固件&#34;&gt;5.2 创建虚拟机并导入固件
+&lt;/h3&gt;&lt;p&gt;以VMware Workstation 16 Pro 16.2.4版本为例，新建虚拟机，选择自定义选项&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/1-20241007232058-nu76hov.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/2-20241007232116-wxeg73q.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/4-20241007232254-m9rdg1f.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;4&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/5-20241007232306-k09jh1q.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;5&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/6-20241007232319-5xw501a.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;6&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/7-20241007232332-j4faizv.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;7&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/8-20241007232413-ufp1nk0.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;8&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/10-20241007232514-g3l2ha9.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;10&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/11-20241007232520-q8n57rc.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;11&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/12-20241007232730-ys2lkbz.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;12&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/PixPin_2024-10-07_22-55-31-20241007232749-qm74jsb.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;PixPin_2024-10-07_22-55-31&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/14-20241007232806-5wcw8rk.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;14&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/15-20241007232827-fwifml4.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;15&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;此时先不要开机，在创建好的虚拟机点击编辑虚拟机设置，添加另一个网络适配器&lt;/li&gt;
+&lt;li&gt;网络适配器NAT做lan(第一个不用改，Openwrt默认将第一个网口设置为lan口)，网络适配器2桥接模式(自动)做wan口&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/16-20241007233102-u8odt3p.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;16&#34;
+	
+	
+&gt;​&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/17-20241007233112-bonknwq.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;17&#34;
+	
+	
+&gt;​&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/18-20241007233245-xjnbpe1.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;18&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;h3 id=&#34;53-虚拟机网卡配置&#34;&gt;5.3 虚拟机网卡配置
+&lt;/h3&gt;&lt;p&gt;点击虚拟网络编辑器，将桥接模式的网卡修改为计算机的物理网卡（当作openwrt的wan口）然后将NAT模式的nat地址这里划分为192.168.20.0&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/19-20241007234039-afcxaof.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;19&#34;
+	
+	
+&gt;​&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/20-20241007234056-dt1w1eq.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;20&#34;
+	
+	
+&gt;​&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/21-20241007234106-sso3nzy.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;21&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;h3 id=&#34;54-配置上网环境&#34;&gt;5.4 配置上网环境
+&lt;/h3&gt;&lt;h5 id=&#34;宿主机通过虚拟机中的openwrt上网&#34;&gt;宿主机通过虚拟机中的Openwrt上网
+&lt;/h5&gt;&lt;p&gt;该方案原理是OpenWrt作为主路由，VMware的虚拟机和宿主机的数据流量都是要通过OpenWrt，取消宿主机物理网卡的ipv4和ipv6，使OpenWrt虚拟机的WAN口桥接到了物理网卡上，接管了IP层的工作，此时，宿主机通过NAT模式虚拟网卡连接到OpenWrt虚拟机LAN口通过OpenWrt上网&lt;/p&gt;
+&lt;p&gt;wan口（就是你要桥接的物理网卡）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/23-20241008232232-n74a2qi.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;23&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;p&gt;lan口（配置VMware Network Adapter VMnet8）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/23.5-20241010125339-ry5kjw3.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;23.5&#34;
+	
+	
+&gt;​&lt;/p&gt;
+&lt;h2 id=&#34;6配置openwrt&#34;&gt;6.配置OpenWrt
+&lt;/h2&gt;&lt;h3 id=&#34;61-防检测配置&#34;&gt;6.1 防检测配置
+&lt;/h3&gt;&lt;p&gt;开机进入OpenWrt系统设置, 勾选启用NTP客户端和作为NTP服务器提供服务&lt;/p&gt;
+&lt;p&gt;在候选NTP服务器四个输入框分别填写：ntp1.aliyun.com、time1.cloud.tencent.com、stdtime.gov.hk 、pool.ntp.org&lt;/p&gt;
+&lt;p&gt;然后保存并应用&lt;/p&gt;
+&lt;h3 id=&#34;62-防火墙添加一下自定义规则&#34;&gt;6.2 防火墙添加一下自定义规则
+&lt;/h3&gt;&lt;p&gt;点击网络&amp;ndash;防火墙&amp;ndash;自定义规则，添加以下规则&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iptables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 53
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iptables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 53
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#通过rkp-ipid设置IPID
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#若没有加入rkp-ipid模块，此部分不需要加入
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iptables -t mangle -N IPID_MOD
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iptables -t mangle -A FORWARD -j IPID_MOD
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iptables -t mangle -A OUTPUT -j IPID_MOD
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iptables -t mangle -A IPID_MOD -d 0.0.0.0/8 -j RETURN
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iptables -t mangle -A IPID_MOD -d 127.0.0.0/8 -j RETURN
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#由于本校局域网是A类网，所以我将这条注释掉了，具体要不要注释结合你所在的校园网
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iptables -t mangle -A IPID_MOD -d 10.0.0.0/8 -j RETURN
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iptables -t mangle -A IPID_MOD -d 172.16.0.0/12 -j RETURN
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iptables -t mangle -A IPID_MOD -d 192.168.0.0/16 -j RETURN
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iptables -t mangle -A IPID_MOD -d 255.0.0.0/8 -j RETURN
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iptables -t mangle -A IPID_MOD -j MARK --set-xmark 0x10/0x10
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 防时钟偏移检测
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iptables -t nat -N ntp_force_local
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iptables -t nat -I PREROUTING -p udp --dport 123 -j ntp_force_local
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iptables -t nat -A ntp_force_local -d 0.0.0.0/8 -j RETURN
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iptables -t nat -A ntp_force_local -d 127.0.0.0/8 -j RETURN
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iptables -t nat -A ntp_force_local -d 192.168.0.0/16 -j RETURN
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iptables -t nat -A ntp_force_local -s 192.168.0.0/16 -j DNAT --to-destinatio
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 通过 iptables 修改 TTL 值 数字为需要的修改的 ttl 值
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iptables -t mangle -A POSTROUTING -j TTL --ttl-set 64
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#iptables 拒绝 AC 进行 Flash 检测
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iptables -I FORWARD -p tcp --sport 80 --tcp-flags ACK ACK -m string --algo bm --string &amp;#34; src=\&amp;#34;http://1.1.1.&amp;#34; -j DROP
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;63-ua2f配置&#34;&gt;6.3 UA2F配置
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 开机自启
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;uci set ua2f.enabled.enabled=1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 自动配置防火墙(默认开启) (建议开启)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;uci set ua2f.firewall.handle_fw=1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;uci set ua2f.firewall.handle_tls=1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;uci set ua2f.firewall.handle_mmtls=1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;uci set ua2f.firewall.handle_intranet=1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 保存配置
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;uci commit ua2f
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 开机自启
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;service ua2f enable
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 启动 ua2f
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;service ua2f start
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 重启一下设备
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;reboot
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;‍然后可以多设备上网了！！！&lt;/p&gt;
+&lt;h2 id=&#34;ua检测网站有可能显示不正确但能使用&#34;&gt;ua检测网站（有可能显示不正确，但能使用）
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://ua.233996.xyz/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://ua.233996.xyz/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;‍&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt; 如果你手上有X86硬路由或者可以刷机的路由器 (如：红米AC2100)，可以在(2.本地编译.config)打开编译菜单时将前三项修改成你的路由器相关信息，在编译完成openwrt固件后导出虚拟机，通过U盘将镜像上传到你的设备&lt;/p&gt;
+&lt;p&gt;‍&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;参考资料
+&lt;/h2&gt;&lt;p&gt;感谢以下大佬的无私贡献，才有这一篇文章&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1yr4meeENt&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【正片】面对校园网的多设备检测，「我」的解决方案是——&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1qM411w7W5&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;校园网防检测！软路由固件编译教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.yqxpro.com/2019/10/04/VMware%E5%AE%89%E8%A3%85OpenWrt%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%A9%E5%AE%BF%E4%B8%BB%E6%9C%BA%E4%B8%8A%E7%BD%91/#%E9%85%8D%E7%BD%AE%E5%AE%BF%E4%B8%BB%E6%9C%BA%E9%80%9A%E8%BF%87OpenWrt%E4%B8%8A%E7%BD%91&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;VMware安装OpenWrt虚拟机让宿主机上网&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/w946612410/article/details/113997146&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;VMware安装OpenWrt让宿主机上网&amp;amp;旁路由（两种方案）&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;‍&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
