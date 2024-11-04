@@ -8,19 +8,10 @@
     <loc>http://localhost:1313/bk/categories/</loc>
     <lastmod>2024-10-23T00:15:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/bk/tags/openwrt/</loc>
-    <lastmod>2024-10-23T00:15:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/bk/categories/openwrt/</loc>
     <lastmod>2024-10-23T00:15:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/bk/post/</loc>
-    <lastmod>2024-10-23T00:15:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/bk/tags/</loc>
-    <lastmod>2024-10-23T00:15:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/bk/tags/vmware/</loc>
     <lastmod>2024-10-23T00:15:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/bk/categories/vmware/</loc>
@@ -40,6 +31,8 @@
   </url><url>
     <loc>http://localhost:1313/bk/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/bk/tags/</loc>
   </url><url>
     <loc>http://localhost:1313/bk/categories/test/</loc>
   </url><url>
