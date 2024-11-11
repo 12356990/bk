@@ -2,44 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://12356990.github.io/bk/</loc>
+    <loc>http://localhost:1313/bk/</loc>
     <lastmod>2024-10-23T00:15:00+00:00</lastmod>
   </url><url>
-    <loc>https://12356990.github.io/bk/categories/</loc>
+    <loc>http://localhost:1313/bk/categories/</loc>
     <lastmod>2024-10-23T00:15:00+00:00</lastmod>
   </url><url>
-    <loc>https://12356990.github.io/bk/categories/openwrt/</loc>
+    <loc>http://localhost:1313/bk/categories/openwrt/</loc>
     <lastmod>2024-10-23T00:15:00+00:00</lastmod>
   </url><url>
-    <loc>https://12356990.github.io/bk/post/</loc>
+    <loc>http://localhost:1313/bk/post/</loc>
     <lastmod>2024-10-23T00:15:00+00:00</lastmod>
   </url><url>
-    <loc>https://12356990.github.io/bk/categories/vmware/</loc>
+    <loc>http://localhost:1313/bk/categories/vmware/</loc>
     <lastmod>2024-10-23T00:15:00+00:00</lastmod>
   </url><url>
-    <loc>https://12356990.github.io/bk/p/%E6%97%A0%E9%9C%80%E7%A1%AC%E4%BB%B6%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%9C%A8vmware%E4%B8%8A%E5%AE%89%E8%A3%85%E8%BD%AF%E8%B7%AF%E7%94%B1%E5%AE%9E%E7%8E%B0%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%85%B1%E4%BA%AB%E4%B8%8A%E7%BD%91/</loc>
+    <loc>http://localhost:1313/bk/p/%E6%97%A0%E9%9C%80%E7%A1%AC%E4%BB%B6%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%9C%A8vmware%E4%B8%8A%E5%AE%89%E8%A3%85%E8%BD%AF%E8%B7%AF%E7%94%B1%E5%AE%9E%E7%8E%B0%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%85%B1%E4%BA%AB%E4%B8%8A%E7%BD%91/</loc>
     <lastmod>2024-10-23T00:15:00+00:00</lastmod>
   </url><url>
-    <loc>https://12356990.github.io/bk/p/2024-%E6%9C%80%E6%96%B0%E7%89%88%E5%85%8D%E8%B4%B9%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85-vmware-%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
+    <loc>http://localhost:1313/bk/p/2024-%E6%9C%80%E6%96%B0%E7%89%88%E5%85%8D%E8%B4%B9%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85-vmware-%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
     <lastmod>2024-10-01T22:41:09+00:00</lastmod>
   </url><url>
-    <loc>https://12356990.github.io/bk/categories/test2/</loc>
+    <loc>http://localhost:1313/bk/categories/test2/</loc>
     <lastmod>2024-10-01T22:41:09+00:00</lastmod>
   </url><url>
-    <loc>https://12356990.github.io/bk/page/</loc>
+    <loc>http://localhost:1313/bk/page/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://12356990.github.io/bk/archives/</loc>
+    <loc>http://localhost:1313/bk/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://12356990.github.io/bk/tags/</loc>
+    <loc>http://localhost:1313/bk/tags/</loc>
   </url><url>
-    <loc>https://12356990.github.io/bk/categories/test/</loc>
+    <loc>http://localhost:1313/bk/categories/test/</loc>
   </url><url>
-    <loc>https://12356990.github.io/bk/%E5%85%B3%E4%BA%8E/</loc>
+    <loc>http://localhost:1313/bk/%E5%85%B3%E4%BA%8E/</loc>
   </url><url>
-    <loc>https://12356990.github.io/bk/search/</loc>
+    <loc>http://localhost:1313/bk/search/</loc>
   </url><url>
-    <loc>https://12356990.github.io/bk/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/</loc>
+    <loc>http://localhost:1313/bk/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/</loc>
   </url>
 </urlset>
