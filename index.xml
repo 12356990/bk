@@ -980,7 +980,20 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;reboot
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;‍然后可以多设备上网了！！！&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;‍‍然后这里有两个骚操作可以为其他设备提供网络：&lt;/p&gt;
+&lt;p&gt;方法一：电脑上下载&lt;a class=&#34;link&#34; href=&#34;https://wifi.360.cn/easy/pc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;360免费WIFI&lt;/a&gt;，开启WIFI，这里有几率无法创建无线网络，可以以校园网模式运行，（注意使用此方法开热点，网速就看你学校网络质量了，我这边白天用好到爆，晚上的时候卡成狗，玩游戏都玩不了）&lt;/p&gt;
+&lt;p&gt;方法二：将电脑的网络桥接给路由器（此步骤要有一个路由器和网线）打开网络控制面板&amp;mdash;网络和Internet&amp;mdash;网络和共享中心&amp;mdash;更改适配器设置&amp;mdash;然后按住Ctrl键选择VMware Network Adapter VMnet8和电脑的有线物理网卡(如图)，选择桥接连接。然后进入路由器改为桥接模式，然后可以多设备上网了！！！&lt;/p&gt;
+&lt;p&gt;​&lt;img src=&#34;http://localhost:1313/bk/bk/assets1/89-20241113213735-trz10i2.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;89&#34;
+	
+	
+&gt;​&lt;/p&gt;
 &lt;h1 id=&#34;ua检测网站有可能显示不正确但能使用&#34;&gt;ua检测网站（有可能显示不正确，但能使用）
 &lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://ua.233996.xyz/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;http://ua.233996.xyz/&lt;/a&gt;&lt;/p&gt;
