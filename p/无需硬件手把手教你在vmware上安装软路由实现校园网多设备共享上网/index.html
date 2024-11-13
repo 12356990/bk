@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/bk/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=bk/livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="无需硬件！手把手教你在VMware上安装软路由，实现校园网多设备共享上网！ 写这一篇文章是为了防止学校的校园网以后使用别的防检测手段，到时怕忘了如何编译OpenWrt\n\u200d本文绝大部分参考以下两位up主的视频，在这里万分感谢！！！\n">
 <title>无需硬件！手把手教你在VMware上安装软路由，实现校园网多设备共享上网!</title>
 
-<link rel='canonical' href='http://localhost:1313/bk/p/%E6%97%A0%E9%9C%80%E7%A1%AC%E4%BB%B6%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%9C%A8vmware%E4%B8%8A%E5%AE%89%E8%A3%85%E8%BD%AF%E8%B7%AF%E7%94%B1%E5%AE%9E%E7%8E%B0%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%85%B1%E4%BA%AB%E4%B8%8A%E7%BD%91/'>
+<link rel='canonical' href='https://12356990.github.io/bk/p/%E6%97%A0%E9%9C%80%E7%A1%AC%E4%BB%B6%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%9C%A8vmware%E4%B8%8A%E5%AE%89%E8%A3%85%E8%BD%AF%E8%B7%AF%E7%94%B1%E5%AE%9E%E7%8E%B0%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%85%B1%E4%BA%AB%E4%B8%8A%E7%BD%91/'>
 
 <link rel="stylesheet" href="/bk/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="无需硬件！手把手教你在VMware上安装软路由，实现校园网多设备共享上网!">
 <meta property='og:description' content="无需硬件！手把手教你在VMware上安装软路由，实现校园网多设备共享上网！ 写这一篇文章是为了防止学校的校园网以后使用别的防检测手段，到时怕忘了如何编译OpenWrt\n\u200d本文绝大部分参考以下两位up主的视频，在这里万分感谢！！！\n">
-<meta property='og:url' content='http://localhost:1313/bk/p/%E6%97%A0%E9%9C%80%E7%A1%AC%E4%BB%B6%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%9C%A8vmware%E4%B8%8A%E5%AE%89%E8%A3%85%E8%BD%AF%E8%B7%AF%E7%94%B1%E5%AE%9E%E7%8E%B0%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%85%B1%E4%BA%AB%E4%B8%8A%E7%BD%91/'>
+<meta property='og:url' content='https://12356990.github.io/bk/p/%E6%97%A0%E9%9C%80%E7%A1%AC%E4%BB%B6%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%9C%A8vmware%E4%B8%8A%E5%AE%89%E8%A3%85%E8%BD%AF%E8%B7%AF%E7%94%B1%E5%AE%9E%E7%8E%B0%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%85%B1%E4%BA%AB%E4%B8%8A%E7%BD%91/'>
 <meta property='og:site_name' content='知识库'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-23T00:15:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-23T00:15:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/bk/assets1/2.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-23T00:15:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-23T00:15:00&#43;00:00'/><meta property='og:image' content='https://12356990.github.io/bk/assets11/2.jpg' />
 <meta name="twitter:title" content="无需硬件！手把手教你在VMware上安装软路由，实现校园网多设备共享上网!">
 <meta name="twitter:description" content="无需硬件！手把手教你在VMware上安装软路由，实现校园网多设备共享上网！ 写这一篇文章是为了防止学校的校园网以后使用别的防检测手段，到时怕忘了如何编译OpenWrt\n\u200d本文绝大部分参考以下两位up主的视频，在这里万分感谢！！！\n"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='http://localhost:1313/bk/assets1/2.jpg' />
+    <meta name="twitter:image" content='https://12356990.github.io/bk/assets11/2.jpg' />
     <link rel="shortcut icon" href="/bk/favicon.ico" />
 
     </head>
@@ -309,7 +309,7 @@
         <div class="article-image">
             <a href="/bk/p/%E6%97%A0%E9%9C%80%E7%A1%AC%E4%BB%B6%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%9C%A8vmware%E4%B8%8A%E5%AE%89%E8%A3%85%E8%BD%AF%E8%B7%AF%E7%94%B1%E5%AE%9E%E7%8E%B0%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%85%B1%E4%BA%AB%E4%B8%8A%E7%BD%91/">
                 
-                    <img src="/bk/assets1/2.jpg" loading="lazy" alt="Featured image of post 无需硬件！手把手教你在VMware上安装软路由，实现校园网多设备共享上网!" />
+                    <img src="/bk/assets11/2.jpg" loading="lazy" alt="Featured image of post 无需硬件！手把手教你在VMware上安装软路由，实现校园网多设备共享上网!" />
                 
             </a>
         </div>
@@ -387,7 +387,7 @@
 <pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">https://cn.ubuntu.com/download/desktop
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>​<img src="/bk/assets/PixPin_2024-10-10_19-30-18-20241010193046-to8awc5.png"
+</div><p>​<img src="/bk/assets1/PixPin_2024-10-10_19-30-18-20241010193046-to8awc5.png"
 	
 	
 	
@@ -397,7 +397,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/0.2-20241010193402-rfyuf3m.png"
+<p>​<img src="/bk/assets1/0.2-20241010193402-rfyuf3m.png"
 	
 	
 	
@@ -407,7 +407,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/PixPin_2024-10-21_23-53-20-20241021235456-1r2ewxh.png"
+<p>​<img src="/bk/assets1/PixPin_2024-10-21_23-53-20-20241021235456-1r2ewxh.png"
 	
 	
 	
@@ -417,7 +417,7 @@
 	
 	
 >​​​</p>
-<p>​<img src="/bk/assets/0.4-20241010194325-z44bkc6.png"
+<p>​<img src="/bk/assets1/0.4-20241010194325-z44bkc6.png"
 	
 	
 	
@@ -429,7 +429,7 @@
 >​</p>
 <h3 id="12-安装ubuntu虚拟机">1.2 安装ubuntu虚拟机
 </h3><p>以VMware Workstation 16 Pro 16.2.4版本为例，新建虚拟机，选择自定义选项</p>
-<p>​<img src="/bk/assets/1-20241007232058-nu76hov.png"
+<p>​<img src="/bk/assets1/1-20241007232058-nu76hov.png"
 	
 	
 	
@@ -439,7 +439,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/2-20241007232116-wxeg73q.png"
+<p>​<img src="/bk/assets1/2-20241007232116-wxeg73q.png"
 	
 	
 	
@@ -449,7 +449,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/4-20241007232254-m9rdg1f.png"
+<p>​<img src="/bk/assets1/4-20241007232254-m9rdg1f.png"
 	
 	
 	
@@ -459,7 +459,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/0.5-20241010195211-vlo8ell.png"
+<p>​<img src="/bk/assets1/0.5-20241010195211-vlo8ell.png"
 	
 	
 	
@@ -469,7 +469,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/0.6-20241010195436-el259vn.png"
+<p>​<img src="/bk/assets1/0.6-20241010195436-el259vn.png"
 	
 	
 	
@@ -479,7 +479,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/0.7-20241010195548-nppybsi.png"
+<p>​<img src="/bk/assets1/0.7-20241010195548-nppybsi.png"
 	
 	
 	
@@ -489,7 +489,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/0.8-20241010195600-3un5xa8.png"
+<p>​<img src="/bk/assets1/0.8-20241010195600-3un5xa8.png"
 	
 	
 	
@@ -499,7 +499,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/0.9-20241010195706-gz5oxjm.png"
+<p>​<img src="/bk/assets1/0.9-20241010195706-gz5oxjm.png"
 	
 	
 	
@@ -509,7 +509,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/10-20241007232514-g3l2ha9.png"
+<p>​<img src="/bk/assets1/10-20241007232514-g3l2ha9.png"
 	
 	
 	
@@ -519,7 +519,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/11-20241007232520-q8n57rc.png"
+<p>​<img src="/bk/assets1/11-20241007232520-q8n57rc.png"
 	
 	
 	
@@ -529,7 +529,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/1.00-20241010195858-gqq00ij.png"
+<p>​<img src="/bk/assets1/1.00-20241010195858-gqq00ij.png"
 	
 	
 	
@@ -540,7 +540,7 @@
 	
 >​</p>
 <p><strong>PS：如果你要安装很多插件建议最低保持100G</strong></p>
-<p>​<img src="/bk/assets/1.01-20241010200203-pd0tfyw.png"
+<p>​<img src="/bk/assets1/1.01-20241010200203-pd0tfyw.png"
 	
 	
 	
@@ -550,7 +550,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/1.02-20241010200336-x5ycszb.png"
+<p>​<img src="/bk/assets1/1.02-20241010200336-x5ycszb.png"
 	
 	
 	
@@ -560,7 +560,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/1.03-20241010200339-zbhezl4.png"
+<p>​<img src="/bk/assets1/1.03-20241010200339-zbhezl4.png"
 	
 	
 	
@@ -571,7 +571,7 @@
 	
 >​</p>
 <p>添加Ubuntu系统镜像</p>
-<p>​<img src="/bk/assets/1.04-20241010201059-gl642s0.png"
+<p>​<img src="/bk/assets1/1.04-20241010201059-gl642s0.png"
 	
 	
 	
@@ -581,7 +581,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/1.05-20241010201534-li14p3b.png"
+<p>​<img src="/bk/assets1/1.05-20241010201534-li14p3b.png"
 	
 	
 	
@@ -591,7 +591,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/1.06-20241010202755-qlchyae.png"
+<p>​<img src="/bk/assets1/1.06-20241010202755-qlchyae.png"
 	
 	
 	
@@ -601,7 +601,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/1.07-20241010202805-1jfnqwe.png"
+<p>​<img src="/bk/assets1/1.07-20241010202805-1jfnqwe.png"
 	
 	
 	
@@ -611,7 +611,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/1.08-20241010202815-afr7nie.png"
+<p>​<img src="/bk/assets1/1.08-20241010202815-afr7nie.png"
 	
 	
 	
@@ -620,7 +620,7 @@
 		alt="1.08"
 	
 	
->​<img src="/bk/assets/1.09-20241010204507-vva9wwj.png"
+>​<img src="/bk/assets1/1.09-20241010204507-vva9wwj.png"
 	
 	
 	
@@ -631,7 +631,7 @@
 	
 >​​​</p>
 <p>安装完成之后，打开软件与更新，将下载自（位于中国的服务器）修改为阿里云的地址，下载快点，也可以不修改。</p>
-<p>​<img src="/bk/assets/1.1-20241010210032-c17q9kr.png"
+<p>​<img src="/bk/assets1/1.1-20241010210032-c17q9kr.png"
 	
 	
 	
@@ -831,7 +831,7 @@
     >校园网防检测！软路由固件编译教程——利用github编译openwrt固件</a></p>
 <p>PS：GitHub Actions是有限制的，安装很多插件可能会导致编译失败，不过安装文章里的插件是可以编译成功的，详情请看：<a class="link" href="https://docs.github.com/zh/actions/administering-github-actions/usage-limits-billing-and-administration"  target="_blank" rel="noopener"
     >GitHub Actions 官方文档-使用限制、计费和管理</a></p>
-<p>​<img src="/bk/assets/77.1-20241012153336-ngzkq7d.png"
+<p>​<img src="/bk/assets1/77.1-20241012153336-ngzkq7d.png"
 	
 	
 	
@@ -840,7 +840,7 @@
 		alt="77.1"
 	
 	
->​<img src="/bk/assets/77.2-20241012153352-cxjf9cq.png"
+>​<img src="/bk/assets1/77.2-20241012153352-cxjf9cq.png"
 	
 	
 	
@@ -851,7 +851,7 @@
 	
 >​</p>
 <p>然后编辑拉取到自己仓库下diy2脚本，添加ua2f和rkp-ipid模块</p>
-<p>​<img src="/bk/assets/77.3-20241012153826-sz0udcb.png"
+<p>​<img src="/bk/assets1/77.3-20241012153826-sz0udcb.png"
 	
 	
 	
@@ -872,7 +872,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>在虚拟机进入lede目录，将feeds.conf.default文件和 .config文件导出虚拟机</p>
-<p>​<img src="/bk/assets/77.4-20241012154624-6fdo47g.png"
+<p>​<img src="/bk/assets1/77.4-20241012154624-6fdo47g.png"
 	
 	
 	
@@ -883,7 +883,7 @@
 	
 >​</p>
 <p>以记事本打开.config文件按Ctrl+F查找Netfilter Extensions关键词，在Netfilter Extensions下第二行后添加代码，保存</p>
-<p>​<img src="/bk/assets/77.5-20241012154638-9tjt7y7.png"
+<p>​<img src="/bk/assets1/77.5-20241012154638-9tjt7y7.png"
 	
 	
 	
@@ -902,7 +902,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>上传feeds.conf.default文件和 .config文件</p>
-<p>​<img src="/bk/assets/77.7-20241012154939-m6scuge.png"
+<p>​<img src="/bk/assets1/77.7-20241012154939-m6scuge.png"
 	
 	
 	
@@ -911,7 +911,7 @@
 		alt="77.7"
 	
 	
->​<img src="/bk/assets/77.9-20241012154956-5o3yg5s.png"
+>​<img src="/bk/assets1/77.9-20241012154956-5o3yg5s.png"
 	
 	
 	
@@ -922,7 +922,7 @@
 	
 >​</p>
 <p>查看一下是否上传完毕</p>
-<p>​<img src="/bk/assets/78.1-20241012155012-x90asab.png"
+<p>​<img src="/bk/assets1/78.1-20241012155012-x90asab.png"
 	
 	
 	
@@ -933,7 +933,7 @@
 	
 >​</p>
 <p>开始编译</p>
-<p>​<img src="/bk/assets/78.3-20241012155254-gx7istr.png"
+<p>​<img src="/bk/assets1/78.3-20241012155254-gx7istr.png"
 	
 	
 	
@@ -944,7 +944,7 @@
 	
 >​</p>
 <p>当出现这个界面时，Actions已经开始编译，编译时间4-6小时（插件越多编译时间越长）</p>
-<p>​<img src="/bk/assets/78.4-20241012155349-a5k3fsl.png"
+<p>​<img src="/bk/assets1/78.4-20241012155349-a5k3fsl.png"
 	
 	
 	
@@ -961,7 +961,7 @@
 </h3><p>将编译好的固件包导出来，使用 StarWind V2V Converter 将img镜像文件转换为vmdk格式</p>
 <p>StarWind V2V Converter下载地址：<a class="link" href="https://www.starwindsoftware.com/tmplink/starwindconverter.exe"  target="_blank" rel="noopener"
     >https://www.starwindsoftware.com/tmplink/starwindconverter.exe</a></p>
-<p>​<img src="/bk/assets/111-20241010231750-7a5xs4d.png"
+<p>​<img src="/bk/assets1/111-20241010231750-7a5xs4d.png"
 	
 	
 	
@@ -970,7 +970,7 @@
 		alt="111"
 	
 	
->​<img src="/bk/assets/3333-20241010231815-0re2xyl.png"
+>​<img src="/bk/assets1/3333-20241010231815-0re2xyl.png"
 	
 	
 	
@@ -979,7 +979,7 @@
 		alt="3333"
 	
 	
->​<img src="/bk/assets/444-20241010231819-vvncgtw.png"
+>​<img src="/bk/assets1/444-20241010231819-vvncgtw.png"
 	
 	
 	
@@ -988,7 +988,7 @@
 		alt="444"
 	
 	
->​<img src="/bk/assets/555-20241010231829-fz5bjr0.png"
+>​<img src="/bk/assets1/555-20241010231829-fz5bjr0.png"
 	
 	
 	
@@ -997,7 +997,7 @@
 		alt="555"
 	
 	
->​<img src="/bk/assets/666-20241010231857-rzm9i2h.png"
+>​<img src="/bk/assets1/666-20241010231857-rzm9i2h.png"
 	
 	
 	
@@ -1006,7 +1006,7 @@
 		alt="666"
 	
 	
->​<img src="/bk/assets/777-20241010231902-q621ikr.png"
+>​<img src="/bk/assets1/777-20241010231902-q621ikr.png"
 	
 	
 	
@@ -1018,7 +1018,7 @@
 >​</p>
 <h3 id="52-创建虚拟机并导入固件">5.2 创建虚拟机并导入固件
 </h3><p>以VMware Workstation 16 Pro 16.2.4版本为例，新建虚拟机，选择自定义选项</p>
-<p>​<img src="/bk/assets/1-20241007232058-nu76hov.png"
+<p>​<img src="/bk/assets1/1-20241007232058-nu76hov.png"
 	
 	
 	
@@ -1028,7 +1028,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/2-20241007232116-wxeg73q.png"
+<p>​<img src="/bk/assets1/2-20241007232116-wxeg73q.png"
 	
 	
 	
@@ -1038,7 +1038,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/4-20241007232254-m9rdg1f.png"
+<p>​<img src="/bk/assets1/4-20241007232254-m9rdg1f.png"
 	
 	
 	
@@ -1048,7 +1048,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/5-20241007232306-k09jh1q.png"
+<p>​<img src="/bk/assets1/5-20241007232306-k09jh1q.png"
 	
 	
 	
@@ -1058,7 +1058,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/6-20241007232319-5xw501a.png"
+<p>​<img src="/bk/assets1/6-20241007232319-5xw501a.png"
 	
 	
 	
@@ -1068,7 +1068,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/7-20241007232332-j4faizv.png"
+<p>​<img src="/bk/assets1/7-20241007232332-j4faizv.png"
 	
 	
 	
@@ -1078,7 +1078,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/8-20241007232413-ufp1nk0.png"
+<p>​<img src="/bk/assets1/8-20241007232413-ufp1nk0.png"
 	
 	
 	
@@ -1088,7 +1088,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/10-20241007232514-g3l2ha9.png"
+<p>​<img src="/bk/assets1/10-20241007232514-g3l2ha9.png"
 	
 	
 	
@@ -1098,7 +1098,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/11-20241007232520-q8n57rc.png"
+<p>​<img src="/bk/assets1/11-20241007232520-q8n57rc.png"
 	
 	
 	
@@ -1108,7 +1108,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/12-20241007232730-ys2lkbz.png"
+<p>​<img src="/bk/assets1/12-20241007232730-ys2lkbz.png"
 	
 	
 	
@@ -1118,7 +1118,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/PixPin_2024-10-07_22-55-31-20241007232749-qm74jsb.png"
+<p>​<img src="/bk/assets1/PixPin_2024-10-07_22-55-31-20241007232749-qm74jsb.png"
 	
 	
 	
@@ -1128,7 +1128,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/14-20241007232806-5wcw8rk.png"
+<p>​<img src="/bk/assets1/14-20241007232806-5wcw8rk.png"
 	
 	
 	
@@ -1138,7 +1138,7 @@
 	
 	
 >​</p>
-<p>​<img src="/bk/assets/15-20241007232827-fwifml4.png"
+<p>​<img src="/bk/assets1/15-20241007232827-fwifml4.png"
 	
 	
 	
@@ -1152,7 +1152,7 @@
 <li>此时先不要开机，在创建好的虚拟机点击编辑虚拟机设置，添加另一个网络适配器</li>
 <li>网络适配器NAT做lan(第一个不用改，Openwrt默认将第一个网口设置为lan口)，网络适配器2桥接模式(自动)做wan口</li>
 </ul>
-<p>​<img src="/bk/assets/16-20241007233102-u8odt3p.png"
+<p>​<img src="/bk/assets1/16-20241007233102-u8odt3p.png"
 	
 	
 	
@@ -1161,7 +1161,7 @@
 		alt="16"
 	
 	
->​<img src="/bk/assets/17-20241007233112-bonknwq.png"
+>​<img src="/bk/assets1/17-20241007233112-bonknwq.png"
 	
 	
 	
@@ -1170,7 +1170,7 @@
 		alt="17"
 	
 	
->​<img src="/bk/assets/18-20241007233245-xjnbpe1.png"
+>​<img src="/bk/assets1/18-20241007233245-xjnbpe1.png"
 	
 	
 	
@@ -1182,7 +1182,7 @@
 >​</p>
 <h3 id="53-虚拟机网卡配置">5.3 虚拟机网卡配置
 </h3><p>点击虚拟网络编辑器，将桥接模式的网卡修改为计算机的物理网卡（当作openwrt的wan口）然后将NAT模式的nat地址这里划分为192.168.20.0</p>
-<p>​<img src="/bk/assets/19-20241007234039-afcxaof.png"
+<p>​<img src="/bk/assets1/19-20241007234039-afcxaof.png"
 	
 	
 	
@@ -1191,7 +1191,7 @@
 		alt="19"
 	
 	
->​<img src="/bk/assets/20-20241007234056-dt1w1eq.png"
+>​<img src="/bk/assets1/20-20241007234056-dt1w1eq.png"
 	
 	
 	
@@ -1200,7 +1200,7 @@
 		alt="20"
 	
 	
->​<img src="/bk/assets/21-20241007234106-sso3nzy.png"
+>​<img src="/bk/assets1/21-20241007234106-sso3nzy.png"
 	
 	
 	
@@ -1214,7 +1214,7 @@
 </h3><h4 id="宿主机通过虚拟机中的openwrt上网">宿主机通过虚拟机中的Openwrt上网
 </h4><p>该方案原理是OpenWrt作为主路由，VMware的虚拟机和宿主机的数据流量都是要通过OpenWrt，取消宿主机物理网卡的ipv4和ipv6，使OpenWrt虚拟机的WAN口桥接到了物理网卡上，接管了IP层的工作，此时，宿主机通过NAT模式虚拟网卡连接到OpenWrt虚拟机LAN口通过OpenWrt上网</p>
 <p>wan口（就是你要桥接的物理网卡）</p>
-<p>​<img src="/bk/assets/23-20241008232232-n74a2qi.png"
+<p>​<img src="/bk/assets1/23-20241008232232-n74a2qi.png"
 	
 	
 	
@@ -1225,7 +1225,7 @@
 	
 >​</p>
 <p>lan口（配置VMware Network Adapter VMnet8）</p>
-<p>​<img src="/bk/assets/23.5-20241010125339-ry5kjw3.png"
+<p>​<img src="/bk/assets1/23.5-20241010125339-ry5kjw3.png"
 	
 	
 	
@@ -1341,7 +1341,7 @@
 <p>方法一：电脑上下载<a class="link" href="https://wifi.360.cn/easy/pc"  target="_blank" rel="noopener"
     >360免费WIFI</a>，开启WIFI，这里有几率无法创建无线网络，可以以校园网模式运行，（注意使用此方法开热点，网速就看你学校网络质量了，我这边白天用好到爆，晚上的时候卡成狗，玩游戏都玩不了）</p>
 <p>方法二：将电脑的网络桥接给路由器（此步骤要有一个路由器和网线）打开网络控制面板&mdash;网络和Internet&mdash;网络和共享中心&mdash;更改适配器设置&mdash;然后按住Ctrl键选择VMware Network Adapter VMnet8和电脑的有线物理网卡(如图)，选择桥接连接。然后进入路由器改为桥接模式，然后可以多设备上网了！！！</p>
-<p>​<img src="/bk/assets1/89-20241113213735-trz10i2.png"
+<p>​<img src="/bk/assets11/89-20241113213735-trz10i2.png"
 	
 	
 	

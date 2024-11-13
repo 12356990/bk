@@ -2,42 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on 知识库</title>
-        <link>http://localhost:1313/bk/categories/</link>
+        <link>https://12356990.github.io/bk/categories/</link>
         <description>Recent content in Categories on 知识库</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>知识库</copyright>
-        <lastBuildDate>Wed, 23 Oct 2024 00:15:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/bk/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 23 Oct 2024 00:15:00 +0000</lastBuildDate><atom:link href="https://12356990.github.io/bk/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Openwrt</title>
-        <link>http://localhost:1313/bk/categories/openwrt/</link>
+        <link>https://12356990.github.io/bk/categories/openwrt/</link>
         <pubDate>Wed, 23 Oct 2024 00:15:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/bk/categories/openwrt/</guid>
+        <guid>https://12356990.github.io/bk/categories/openwrt/</guid>
         <description></description>
         </item>
         <item>
         <title>VMware</title>
-        <link>http://localhost:1313/bk/categories/vmware/</link>
+        <link>https://12356990.github.io/bk/categories/vmware/</link>
         <pubDate>Wed, 23 Oct 2024 00:15:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/bk/categories/vmware/</guid>
+        <guid>https://12356990.github.io/bk/categories/vmware/</guid>
         <description></description>
         </item>
         <item>
         <title>Test2</title>
-        <link>http://localhost:1313/bk/categories/test2/</link>
+        <link>https://12356990.github.io/bk/categories/test2/</link>
         <pubDate>Tue, 01 Oct 2024 22:41:09 +0000</pubDate>
         
-        <guid>http://localhost:1313/bk/categories/test2/</guid>
+        <guid>https://12356990.github.io/bk/categories/test2/</guid>
         <description></description>
         </item>
         <item>
         <title>Test</title>
-        <link>http://localhost:1313/bk/categories/test/</link>
+        <link>https://12356990.github.io/bk/categories/test/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/bk/categories/test/</guid>
-        <description>&lt;img src="http://localhost:1313/bk/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
+        <guid>https://12356990.github.io/bk/categories/test/</guid>
+        <description>&lt;img src="https://12356990.github.io/bk/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
         </item>
         
     </channel>
